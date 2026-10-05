@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home - Attendance Tracker</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="header-left">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div class="header-text">
+                    <strong>Attendance Tracker</strong>
+                    <span>COMP 143 - Web Development, Prof. Reyes</span>
+                </div>
+            </div>
+            <button class="icon-btn" aria-label="Log out">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+        </header>
+
+        <!--
+            "open"   = the student can submit their ID
+            "closed" = shows "No attendance required for this date."
+        -->
+        <main class="dash" data-attendance="open">
+            <section class="take">
+                <div class="panel">
+                    <h2>Take attendance</h2>
+                    <p class="date" data-today>mm/dd/yyyy</p>
+
+                    <form class="when-open" data-next="#recorded">
+                        <label>
+                            Student ID
+                            <input type="text" placeholder="0000-00000-SR-0" pattern="\d{4}-\d{5}-SR-\d" title="Format: 0000-00000-SR-0" required>
+                        </label>
+                        <button class="btn light" type="submit">Submit Attendance</button>
+                    </form>
+
+                    <p class="when-closed">No attendance required for this date.</p>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>My Attendance Records</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time in</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09/29/2026</td>
+                                <td>1:02 PM</td>
+                                <td><span class="tag present">Present</span></td>
+                            </tr>
+                            <tr>
+                                <td>09/22/2026</td>
+                                <td>1:24 PM</td>
+                                <td><span class="tag late">Late</span></td>
+                            </tr>
+                            <tr>
+                                <td>09/15/2026</td>
+                                <td>-</td>
+                                <td><span class="tag absent">Absent</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <div class="modal" id="account" role="dialog" aria-modal="true">
+            <div class="box">
+                <h2>Account Information</h2>
+                <img class="avatar" alt="Profile picture" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=">
+                <dl>
+                    <dt>Name</dt>
+                    <dd>Juan Dela Cruz</dd>
+                    <dt>Student ID</dt>
+                    <dd>0000-00000-SR-0</dd>
+                    <dt>Email</dt>
+                    <dd>juan@example.com</dd>
+                </dl>
+                <a class="btn alt" href="#">Close</a>
+            </div>
+        </div>
+
+        <div class="modal" id="recorded" role="dialog" aria-modal="true">
+            <div class="box">
+                <h2>Attendance recorded</h2>
+                <p>Your attendance for today has been saved.</p>
+                <a class="btn" href="#">Done</a>
+            </div>
+        </div>
+        <script src="auth.js"></script>
+    </body>
+</html>

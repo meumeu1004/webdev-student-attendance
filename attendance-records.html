@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Attendance Records</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="topbar">
+        <div class="header-left">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div class="header-text">
+                <strong>Attendance Tracker</strong>
+                <span>COMP 143 - Web Development, Prof. Reyes</span>
+            </div>
+        </div>
+        <button class="icon-btn" aria-label="Log out">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+    </header>
+
+    <main class="page">
+        <a href="adminhome.html" class="back-button">
+            <i class="fa-solid fa-arrow-left-long"></i>
+            <span>Back to Home</span>
+        </a>
+
+        <h2 class="page-title">Attendance Records</h2>
+
+        <div class="search-bar">
+            <input type="search" id="student-search" placeholder="Search Student ID" aria-label="Search Student ID">
+            <button type="button" id="search-btn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="record-filters">
+            <div class="filter">
+                <label for="sections">Section</label>
+                <select name="sections" id="sections">
+                    <option value="3-1">BSIT 3-1</option>
+                    <option value="3-2">BSIT 3-2</option>
+                    <option value="3-3">BSIT 3-3</option>
+                    <option value="3-4">BSIT 3-4</option>
+                </select>
+            </div>
+
+            <div class="filter">
+                <label for="record-date">Date</label>
+                <input type="date" id="record-date" name="record-date">
+            </div>
+        </div>
+
+        <div class="card table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Time In</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-0001</td>
+                        <td>Juan Dela Cruz</td>
+                        <td>9:32 AM</td>
+                        <td><span class="status status-present">Present</span></td>
+                    </tr>
+                    <tr>
+                        <td>2023-0002</td>
+                        <td>Maria Santos</td>
+                        <td>9:35 AM</td>
+                        <td><span class="status status-present">Present</span></td>
+                    </tr>
+                    <tr>
+                        <td>2023-0003</td>
+                        <td>Pedro Reyes</td>
+                        <td>—</td>
+                        <td><span class="status status-absent">Absent</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>
